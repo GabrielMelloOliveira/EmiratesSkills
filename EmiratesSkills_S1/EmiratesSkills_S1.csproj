@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09AB8988-F3CA-41B4-99C8-D606B6B4C0D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EmiratesSkills_S1</RootNamespace>
+    <AssemblyName>EmiratesSkills_S1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.sqlserver.batchparser, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86" />
+    <Reference Include="Microsoft.SqlServer.BatchParserClient, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Dmf, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Dmf.Common, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.SmoMetadataProvider, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Access.cs" />
+    <Compile Include="Model\Competition.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompetitionSkill.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CompetitionSkillPerson.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Competitor.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FinalScore.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Position.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Skill.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Staff.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Timesheet.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ExtensionMethods\ExtensionControl.cs" />
+    <Compile Include="Util\ExtensionMethods\ExtensionForms.cs" />
+    <Compile Include="Util\Import.cs" />
+    <Compile Include="Util\ManageControl.cs" />
+    <Compile Include="View\ControlAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlAbout.Designer.cs">
+      <DependentUpon>ControlAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlAddNewUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlAddNewUser.Designer.cs">
+      <DependentUpon>ControlAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlAdministratorMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlAdministratorMenu.Designer.cs">
+      <DependentUpon>ControlAdministratorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlChiefExpertMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlChiefExpertMenu.Designer.cs">
+      <DependentUpon>ControlChiefExpertMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlCompetitionsAndSkills.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlCompetitionsAndSkills.Designer.cs">
+      <DependentUpon>ControlCompetitionsAndSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlCompetitorMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlCompetitorMenu.Designer.cs">
+      <DependentUpon>ControlCompetitorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlCompetitorsMarking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlCompetitorsMarking.Designer.cs">
+      <DependentUpon>ControlCompetitorsMarking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlCompetitorsStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlCompetitorsStatus.Designer.cs">
+      <DependentUpon>ControlCompetitorsStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlEditUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlEditUser.Designer.cs">
+      <DependentUpon>ControlEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlEditYourProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlEditYourProfile.Designer.cs">
+      <DependentUpon>ControlEditYourProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlFindOutMore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlFindOutMore.Designer.cs">
+      <DependentUpon>ControlFindOutMore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlLoginScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlLoginScreen.Designer.cs">
+      <DependentUpon>ControlLoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlManageCompetitions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlManageCompetitions.Designer.cs">
+      <DependentUpon>ControlManageCompetitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlManageSkills.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlManageSkills.Designer.cs">
+      <DependentUpon>ControlManageSkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlRegisterCompetitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlRegisterCompetitor.Designer.cs">
+      <DependentUpon>ControlRegisterCompetitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlRegistrationConfirmation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlRegistrationConfirmation.Designer.cs">
+      <DependentUpon>ControlRegistrationConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlResultOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlResultOverview.Designer.cs">
+      <DependentUpon>ControlResultOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlUserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ControlUserManagement.Designer.cs">
+      <DependentUpon>ControlUserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CurrentFormModel.cs" />
+    <Compile Include="View\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAdd.Designer.cs">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAdditionalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAdditionalInformation.Designer.cs">
+      <DependentUpon>FormAdditionalInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAddScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddScore.Designer.cs">
+      <DependentUpon>FormAddScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormEmailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormEmailList.Designer.cs">
+      <DependentUpon>FormEmailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMainScreen.Designer.cs">
+      <DependentUpon>FormMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMap.Designer.cs">
+      <DependentUpon>FormMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormModel.Designer.cs">
+      <DependentUpon>FormModel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ControlAbout.resx">
+      <DependentUpon>ControlAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlAddNewUser.resx">
+      <DependentUpon>ControlAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlAdministratorMenu.resx">
+      <DependentUpon>ControlAdministratorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlChiefExpertMenu.resx">
+      <DependentUpon>ControlChiefExpertMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlCompetitionsAndSkills.resx">
+      <DependentUpon>ControlCompetitionsAndSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlCompetitorMenu.resx">
+      <DependentUpon>ControlCompetitorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlCompetitorsMarking.resx">
+      <DependentUpon>ControlCompetitorsMarking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlCompetitorsStatus.resx">
+      <DependentUpon>ControlCompetitorsStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlEditUser.resx">
+      <DependentUpon>ControlEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlEditYourProfile.resx">
+      <DependentUpon>ControlEditYourProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlFindOutMore.resx">
+      <DependentUpon>ControlFindOutMore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlLoginScreen.resx">
+      <DependentUpon>ControlLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlManageCompetitions.resx">
+      <DependentUpon>ControlManageCompetitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlManageSkills.resx">
+      <DependentUpon>ControlManageSkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlRegisterCompetitor.resx">
+      <DependentUpon>ControlRegisterCompetitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlRegistrationConfirmation.resx">
+      <DependentUpon>ControlRegistrationConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlResultOverview.resx">
+      <DependentUpon>ControlResultOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlUserManagement.resx">
+      <DependentUpon>ControlUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAdd.resx">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAdditionalInformation.resx">
+      <DependentUpon>FormAdditionalInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddScore.resx">
+      <DependentUpon>FormAddScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormEmailList.resx">
+      <DependentUpon>FormEmailList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMainScreen.resx">
+      <DependentUpon>FormMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMap.resx">
+      <DependentUpon>FormMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormModel.resx">
+      <DependentUpon>FormModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Resources\EmiratesSkills-system-2017-map.jpg" />
+    <None Include="Resources\ADNEC-Grandstand.jpg" />
+    <None Include="Resources\Emirates-Palace.jpg" />
+    <None Include="Resources\Khalifa-Park.jpg" />
+    <None Include="Resources\marathon-image.jpg" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\4.jpg" />
+    <Content Include="cities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="insert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Photo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="staff.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Model\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="schools.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="universities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Captura de Tela %2852%291.png" />
+    <None Include="Resources\Captura de Tela %2852%29.png" />
+    <None Include="Resources\logo-monochrome.png" />
+    <None Include="Resources\logo-full-colour.png" />
+    <None Include="Resources\Photo.jpg" />
+    <None Include="Resources\ID.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
